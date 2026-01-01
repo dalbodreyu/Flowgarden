@@ -31,10 +31,10 @@ class TimerText extends StatelessWidget {
             fit: BoxFit.scaleDown,
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 4),
-              child: Column(
-                // mainAxisSize.min으로 최소 크기만 차지
-                mainAxisSize: MainAxisSize.min,
-                children: [
+            child: Column(
+              // mainAxisSize.min으로 최소 크기만 차지
+              mainAxisSize: MainAxisSize.min,
+              children: [
                 // ============================================
                 // 메인 타이머 텍스트 (Silkscreen 폰트)
                 // ============================================

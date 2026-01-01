@@ -159,7 +159,7 @@ class _RoomDisplayState extends State<RoomDisplay> {
                             timerProvider.isFocusMode,
                           )
                         : _buildLoadingOrFallback(timerProvider),
-                  ),
+                    ),
                 ],
               ),
             ),

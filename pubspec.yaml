@@ -2,7 +2,7 @@ name: flow_garden
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: ^3.10.1
@@ -36,13 +36,13 @@ dependencies:
   cupertino_icons: ^1.0.8
 
   # FlowGarden 필수 패키지
-  provider: ^6.1.2              # 상태 관리
-  audioplayers: ^6.1.0          # 배경음악 재생
-  shared_preferences: ^2.3.4    # 로컬 데이터 저장
-  google_fonts: ^6.2.1          # 레트로 픽셀 폰트
-  wakelock_plus: ^1.2.10        # 화면 꺼짐 방지
-  flutter_local_notifications: ^18.0.1  # 로컬 알림
-  video_player: ^2.9.2          # 동영상 배경
+  provider: ^6.1.2 # 상태 관리
+  audioplayers: ^6.1.0 # 배경음악 재생
+  shared_preferences: ^2.3.4 # 로컬 데이터 저장
+  google_fonts: ^6.2.1 # 레트로 픽셀 폰트
+  wakelock_plus: ^1.2.10 # 화면 꺼짐 방지
+  flutter_local_notifications: ^18.0.1 # 로컬 알림
+  video_player: ^2.9.2 # 동영상 배경
 
 dev_dependencies:
   flutter_test:
@@ -54,13 +54,24 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.3 # 앱 아이콘 생성
+
+# 앱 아이콘 설정
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "logo.png"
+  # Android 적응형 아이콘 설정
+  adaptive_icon_background: "#d1cd8a" # 아이콘 배경색 (연한 노란색)
+  adaptive_icon_foreground: "logo.png"
+  # iOS 설정
+  remove_alpha_ios: true # iOS는 투명 배경 불허용
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -69,6 +80,7 @@ flutter:
   # Assets 폴더 등록
   assets:
     - assets/sounds/
+    - assets/images/logo.png
     - assets/images/room_focus.png
     - assets/images/room_rest.png
     - assets/videos/

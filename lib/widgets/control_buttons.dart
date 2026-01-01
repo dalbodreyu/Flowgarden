@@ -40,16 +40,16 @@ class ControlButtons extends StatelessWidget {
                   // Paused 상태일 때만 왼쪽에 포기하기/건너뛰기 아이콘 버튼 표시
                   if (timerProvider.isPaused) ...[
                     _buildGiveUpIconButton(timerProvider, textColor),
-                    const SizedBox(width: 24),
-                  ],
+                const SizedBox(width: 24),
+              ],
 
-                  // ============================================
-                  // 메인 버튼 (상태에 따라 변경)
-                  // Ready -> Play 버튼
-                  // Running -> Pause 버튼
-                  // Paused -> Resume(Play) 버튼
-                  // ============================================
-                  _buildMainButton(timerProvider, primaryColor),
+              // ============================================
+              // 메인 버튼 (상태에 따라 변경)
+              // Ready -> Play 버튼
+              // Running -> Pause 버튼
+              // Paused -> Resume(Play) 버튼
+              // ============================================
+              _buildMainButton(timerProvider, primaryColor),
                 ],
               ),
 
@@ -125,50 +125,50 @@ class ControlButtons extends StatelessWidget {
           // 메인 버튼
           // ============================================
           Material(
-            color: Colors.transparent,
-            child: InkWell(
-              onTap: onPressed,
-              borderRadius: BorderRadius.circular(40),
-              child: Container(
-                width: 80,
-                height: 80,
-                decoration: BoxDecoration(
-                  color: primaryColor,
-                  shape: BoxShape.circle,
-                  // 레트로 게임 스타일의 두꺼운 테두리
-                  border: Border.all(
-                    color: Colors.white.withValues(alpha: 0.4),
-                    width: 3,
-                  ),
-                  // 입체감을 주는 그림자
-                  boxShadow: [
-                    BoxShadow(
-                      color: primaryColor.withValues(alpha: 0.5),
-                      blurRadius: 15,
-                      spreadRadius: 2,
-                      offset: const Offset(0, 4),
-                    ),
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.2),
-                      blurRadius: 8,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onPressed,
+          borderRadius: BorderRadius.circular(40),
+          child: Container(
+            width: 80,
+            height: 80,
+            decoration: BoxDecoration(
+              color: primaryColor,
+              shape: BoxShape.circle,
+              // 레트로 게임 스타일의 두꺼운 테두리
+              border: Border.all(
+                color: Colors.white.withValues(alpha: 0.4),
+                width: 3,
+              ),
+              // 입체감을 주는 그림자
+              boxShadow: [
+                BoxShadow(
+                  color: primaryColor.withValues(alpha: 0.5),
+                  blurRadius: 15,
+                  spreadRadius: 2,
+                  offset: const Offset(0, 4),
                 ),
-                child: Tooltip(
-                  message: tooltip,
-                  child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 200),
-                    child: Icon(
-                      buttonIcon,
-                      key: ValueKey(buttonIcon),
-                      size: 40,
-                      color: Colors.white,
-                    ),
-                  ),
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.2),
+                  blurRadius: 8,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
+            child: Tooltip(
+              message: tooltip,
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 200),
+                child: Icon(
+                  buttonIcon,
+                  key: ValueKey(buttonIcon),
+                  size: 40,
+                  color: Colors.white,
                 ),
               ),
             ),
+          ),
+        ),
           ),
         ],
       ),
